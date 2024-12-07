@@ -5,7 +5,7 @@
         target_schema = 'dev',
         unique_key = 'id',
         strategy = 'timestamp',
-        update_at = 'updated_at',
+        updated_at = 'updated_at',
         invalidate_hard_deletes = True
     )
 }}
