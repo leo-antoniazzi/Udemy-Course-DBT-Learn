@@ -1,0 +1,17 @@
+{% snapshot scd_raw_listings %}
+
+{{
+    config(
+        target_schema = 'dev',
+        unique_key = 'id',
+        strategy = 'timestamp',
+        update_at = 'updated_at',
+        invalidate_hard_deletes = True
+    )
+}}
+
+SELECT
+    *
+FROM {{ source('airbnb', 'listings') }}
+
+{% endsnapshot %}
